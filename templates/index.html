@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Extraction Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Invoice Extraction</h1>
+        <div class="upload-section">
+            <div class="input-group">
+                <input type="file" id="invoiceUpload" accept=".pdf,.docx,.png,.jpg,.jpeg" class="file-input">
+            </div>
+            <div class="input-group">
+                <select name="approver" id="approverSelect" class="approver-select">
+                    <option value="">Loading approvers...</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <button onclick="uploadInvoice()" class="upload-btn">Upload Invoice</button>
+            </div>
+        </div>
+        <div id="result" class="result-section"></div>
+    </div>
+    <script src="{{ url_for('static', path='/js/app.js') }}"></script>
+    <script>
+        // Verify the script is running
+        console.log('Page loaded');
+        // Immediately try to load approvers
+        loadApprovers();
+    </script>
+</body>
+</html>

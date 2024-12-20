@@ -1,0 +1,26 @@
+<!-- templates/monitoring.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoring Dashboard</title>
+</head>
+<body>
+    <h1>Processing Summary</h1>
+    <h2>Total Processed: {{ summary.total_processed }}</h2>
+    <h2>Approved: {{ summary.approved }}</h2>
+    <h2>Rejected: {{ summary.rejected }}</h2>
+    <h2>Needs Modifications: {{ summary.needs_modifications }}</h2>
+    <h2>Errors: {{ summary.errors }}</h2>
+    
+    <h3>Processed Emails:</h3>
+    <ul>
+        {% for email in summary.processed_emails %}
+            <li>
+                {{ email.timestamp }} - {{ email.sender }} - {{ email.subject }} - Status: {{ email.status }} - Confidence: {{ email.confidence }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
