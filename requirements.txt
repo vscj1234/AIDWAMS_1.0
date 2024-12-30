@@ -1,0 +1,12 @@
+Flask==2.0.3
+msal==1.16.0
+requests==2.26.0
+python-docx==0.8.11
+langchain-community
+langchain
+chromadb
+openai
+python-dotenv==0.19.2
+werkzeug==2.0.3
+tiktoken
+python-multipart
