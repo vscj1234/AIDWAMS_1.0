@@ -1,3 +1,5 @@
+Command to run: uvicorn main:app --reload
+
 => The process begins when a user uploads a document through the FastAPI endpoint in `main.py`, which triggers the document processing chain. 
 
 => The uploaded file is first processed by `document_processor.py`, which handles different file formats (PDF, DOCX, images) and extracts text content, utilizing `ocr_processor.py` for image-based documents using Tesseract OCR. 
